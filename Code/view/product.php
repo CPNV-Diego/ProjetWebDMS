@@ -8,14 +8,8 @@
 
 // tampon de flux stocké en mémoire
 ob_start();
-$title="DMS - Perdu";
+$title="DMS - Product";
 ?>
-
-    <div>
-        <h1>Cette page n'existe pas !</h1>
-
-        <a href="index.php?action=home">Retourner à l'accueil</a>
-    </div>
 
 <?php
 $content = ob_get_clean();
