@@ -1,4 +1,5 @@
 <?php
+require "model/dataRegister.php";
 
 function home(){
     require "view/home.php";
@@ -23,4 +24,9 @@ function login(){
 }
 function lost(){
     require "view/lost.php";
+}
+
+function registerProcess($arrayOfUserInputs){
+    saveRegister($arrayOfUserInputs);
+    register();
 }
