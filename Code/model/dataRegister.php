@@ -2,20 +2,20 @@
 require "fileConnector.php";
 
 //region Global variables
-$newRegister;
 //endregion Global variables
-
-function saveRegister($arrayInputUserForm)
+function extractRegister($data)
 {
-    $newRegisterToWrite = extractRegister($arrayInputUserForm);
-    writeRegisterInJSON($newRegisterToWrite);
+    $emailAddress = $data['inputEmailAddress'];
+    $password = $data['inputPassword'];
+
+
+    $newRegisterTemp = array($emailAddress, $password);
+    return $newRegisterTemp;
 }
 
-function extractRegister($arrayInputUserForm)
+function saveRegister($data)
 {
-    $emailAddress = $arrayInputUserForm['inputEmailAddress'];
-
-
-    $newRegisterTemp = array($emailAddress);
-    return $newRegisterTemp;
+    //Cette fonction crée un tableau et l'écrit dans le json comme une ligne
+    $newRegisterToWrite = extractRegister($data);//crée tableau simple (non associatif)
+    writeRegisterInJSON($newRegisterToWrite);
 }
