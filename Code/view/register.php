@@ -6,6 +6,11 @@
  * Time: 09:16
  */
 
+if(!empty($_POST))
+{
+    saveRegister($_POST);
+}
+
 // tampon de flux stocké en mémoire
 ob_start();
 $title="DMS - Register";
@@ -20,10 +25,10 @@ $title="DMS - Register";
 
     <body>
     <h2>Register</h2>
-    <form method="post" name="formRegister" action="index.php?action=home">
+    <form method="post" name="formRegister" action="index.php?action=register">
         <div class="form-group">
             <label for="inputEmail">Email address *</label>
-            <input type="email" class="form-control" id="inputEmail" name="inputEmailAddress" aria-describedby="emailHelp" placeholder="firstname@domain.ch" required>
+            <input type="email" class="form-control" id="inputEmail" name="inputEmailAddress" aria-describedby="emailHelp" value="<?=!empty($_POST) ? $_POST['inputEmailAddress'] : ''?>" placeholder="firstname@domain.ch" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">

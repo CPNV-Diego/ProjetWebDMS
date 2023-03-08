@@ -1,10 +1,17 @@
 <?php
 
-function writeRegisterInJSON($registerToWrite)
+function registerUsers($data)
 {
-    $pathToJSONFile = setFullPath("data/register.json");
-    $encodedRegister = json_encode($registerToWrite);
-    writeMsgInFile($pathToJSONFile, $encodedRegister, false);
+    $inp = file_get_contents(setFullPath("data\\register.json"));
+    $tempArray = json_decode($inp, true);
+    $tempArray = is_array($tempArray) ? $tempArray : array();
+    array_push($tempArray, $data);
+    $jsonData = json_encode($tempArray);
+    file_put_contents(setFullPath("data\\register.json"), $jsonData);
+
+    //$pathToJSONFile = setFullPath("data/register.json");
+    //$encodedRegister = json_encode($registerToWrite);
+    //writeMsgInFile($pathToJSONFile, $encodedRegister, false);
 }
 
 //<editor-fold desc="function">
@@ -48,6 +55,6 @@ function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
         $lineToWrite = $lineToWrite;
     }
 
-    fwrite($strWriter, $lineToWrite  . "\r\n");
+    fwrite($strWriter, $lineToWrite  . "\r\n ,");
     fclose($strWriter);
 }
