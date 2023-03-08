@@ -16,9 +16,6 @@ function blog(){
 function contact(){
     require "view/contact.php";
 }
-function register(){
-    require "view/register.php";
-}
 function login(){
     require "view/login.php";
 }
@@ -26,7 +23,10 @@ function lost(){
     require "view/lost.php";
 }
 
-function registerProcess($arrayOfUserInputs){
-    saveRegister($arrayOfUserInputs);
-    register();
+function register($data)
+{
+    require "view/register.php";
+    //Affiche les données, en renommant $_POST $data
+    saveRegister($data);
+    echo "données écrites sur le disque";
 }
