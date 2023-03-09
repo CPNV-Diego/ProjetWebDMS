@@ -9,9 +9,9 @@ function registerUsers($data)
     $jsonData = json_encode($tempArray);
     file_put_contents(setFullPath("data\\register.json"), $jsonData);
 
-    //$pathToJSONFile = setFullPath("data/register.json");
-    //$encodedRegister = json_encode($registerToWrite);
-    //writeMsgInFile($pathToJSONFile, $encodedRegister, false);
+    /*$pathToJSONFile = setFullPath("data/register.json");
+    $encodedRegister = json_encode($registerToWrite);
+    writeMsgInFile($pathToJSONFile, $encodedRegister, false);*/
 }
 
 //<editor-fold desc="function">
@@ -47,14 +47,13 @@ function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
     */
 
     $strWriter = null;
-    if($erase){
+    if ($erase) {
         $strWriter = fopen($fileFullPath, "w+");
-    }
-    else{
+    } else {
         $strWriter = fopen($fileFullPath, "a+");
         $lineToWrite = $lineToWrite;
     }
 
-    fwrite($strWriter, $lineToWrite  . "\r\n ,");
+    fwrite($strWriter, $lineToWrite . "\r\n ,");
     fclose($strWriter);
 }

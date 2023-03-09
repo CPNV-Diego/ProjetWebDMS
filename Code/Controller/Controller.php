@@ -23,12 +23,12 @@ function lost(){
     require "view/lost.php";
 }
 
-function register()
+function register($post)
 {
     require "view/register.php";
     //Affiche les données, en renommant $_POST $data
-    if(empty($_POST)) {
-        saveRegister($_POST);
+    if(!empty($post)) {
+        saveRegister($post);
     }
     echo "données écrites sur le disque";
 }
