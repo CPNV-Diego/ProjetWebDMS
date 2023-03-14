@@ -9,22 +9,11 @@ require "fileConnector.php";
     writeRegisterInJSON($newRegisterToWrite);
 }*/
 
-function extractRegister()
+function extractRegister($data)
 {
-    $emailAddress = $_POST['inputEmailAddress'];
-    $password = $_POST['inputPassword'];
-
-    $filename = 'data/register.json';
-
-    //$data = file_get_contents($filename);
-   //$users = json_decode($data,true);
-
-    $users[] = array('username' => $emailAddress, 'password' => $password);
-
-    file_put_contents($filename , json_encode($users));
-
-   // $newRegisterTemp = array($emailAddress, $password);
-   // return $newRegisterTemp;
+    $emailAddress = $data['inputEmailAddress'];
+    $password = $data['inputPassword'];
+   return array($emailAddress, $password);
 }
 
 function saveRegister($data)
@@ -32,6 +21,6 @@ function saveRegister($data)
     //Cette fonction crée un tableau et l'écrit dans le json comme une ligne
 
     $newRegisterToWrite = extractRegister($data);//crée tableau simple (non associatif)
-    registerUsers($newRegisterToWrite);
+    return registerUsers($newRegisterToWrite);
 }
 

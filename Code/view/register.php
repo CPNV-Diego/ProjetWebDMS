@@ -5,10 +5,11 @@
  * Date: 08.05.2017
  * Time: 09:16
  */
-
-if(!empty($_POST))
+$status = true;
+if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {
-    saveRegister($_POST);
+    $status = saveRegister($_POST);
+    $_POST = [];
 }
 
 // tampon de flux stocké en mémoire
@@ -25,6 +26,7 @@ $title="DMS - Register";
 
     <body>
     <h2>Register</h2>
+    <?php echo !$status ? "<p>Ce compte existe </p>" : '' ?>
     <form method="post" name="formRegister" action="index.php?action=register">
         <div class="form-group">
             <label for="inputEmail">Email address *</label>

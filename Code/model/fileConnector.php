@@ -2,18 +2,34 @@
 
 function registerUsers($data)
 {
-    $inp = file_get_contents(setFullPath("data\\register.json"));
-    $tempArray = json_decode($inp, true);
-    $tempArray = is_array($tempArray) ? $tempArray : array();
-    array_push($tempArray, $data);
-    $jsonData = json_encode($tempArray);
-    file_put_contents(setFullPath("data\\register.json"), $jsonData);
+    $filename = 'data/register.json';
 
-    /*$pathToJSONFile = setFullPath("data/register.json");
-    $encodedRegister = json_encode($registerToWrite);
-    writeMsgInFile($pathToJSONFile, $encodedRegister, false);*/
+    $file_data = file_get_contents($filename);
+    $users = json_decode($file_data, true);
+
+    if (existsNotInArray($data[0], $users)) {
+
+        $users[] = array('email' => $data[0], 'password' => $data[1]);
+        file_put_contents($filename, json_encode($users));
+        return true;
+    } else {
+        return false;
+    }
 }
 
+function existsNotInArray($email, $users)
+{
+    if(!empty($users)) {
+        foreach ($users as $compare) {
+            if ($compare['email'] == $email) {
+                return false;
+            }
+            return true;
+        }
+    } else {
+        return true;
+    }
+}
 //<editor-fold desc="function">
 /**
  * This function is designed to append a path with the fileName received as parameter
@@ -40,11 +56,11 @@ function setFullPath($fName)
  * @param $lineToWrite : Is the content to write in the file.
  * @param $erase : Is an option allowing to erase the file before writing or happening the $lineToWrite a the end of the file
  */
-function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
+/*function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
 {
-    /* Help
+    Help
     //http://php.net/manual/en/function.fopen.php
-    */
+
 
     $strWriter = null;
     if ($erase) {
@@ -56,4 +72,4 @@ function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
 
     fwrite($strWriter, $lineToWrite . "\r\n ,");
     fclose($strWriter);
-}
+}*/
