@@ -9,6 +9,7 @@
 // tampon de flux stocké en mémoire
 ob_start();
 $title="DMS - Accueil";
+
 ?>
     <!-- product section start -->
     <div class="product_section layout_padding">

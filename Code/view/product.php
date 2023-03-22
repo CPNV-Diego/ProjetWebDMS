@@ -12,5 +12,9 @@ $title="DMS - Product";
 ?>
 
 <?php
+productConnect();
+?>
+
+<?php
 $content = ob_get_clean();
 require "gabarit.php";

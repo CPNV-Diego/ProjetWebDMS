@@ -1,0 +1,60 @@
+
+{
+  "Product1": [
+    {
+      "Name": "Air Jordan 1"
+    },
+    {
+      "Price": "150 CHF"
+    },
+    {
+      "Brand": "Nike Air Jordan"
+    }
+  ],
+  "Product2": [
+    {
+      "Name": "Fresh Foam X More v4"
+    },
+    {
+      "Price": "150 CHF"
+    },
+    {
+      "Brand": "New Balance"
+    }
+  ],
+  "Product3": [
+    {
+      "Name": "Dunk High Retro sneakers"
+    },
+    {
+      "Price": "160 CHF"
+    },
+    {
+      "Brand": "Nike"
+    }
+  ],
+  "Product4": [
+    {
+      "Name": "NMD R1 V2"
+    },
+    {
+      "Price": "170 CHF"
+    },
+    {
+      "Brand": "Adidas"
+    }
+  ],
+  "Product5": [
+    {
+      "Name": "Yeezy Boost 350 V2 MX Rock"
+    },
+    {
+      "Price": "355 CHF"
+    },
+    {
+      "Brand": "Yeezy"
+    }
+  ]
+}
+
+
