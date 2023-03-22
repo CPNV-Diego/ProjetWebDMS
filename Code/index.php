@@ -21,7 +21,7 @@ if (isset($_GET['action'])) {
             contact();
             break;
         case 'register' :
-            register($_POST);
+            register();
             break;
         case 'login' :
             login();

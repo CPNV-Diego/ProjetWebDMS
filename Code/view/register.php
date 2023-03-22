@@ -25,9 +25,10 @@ $title="DMS - Register";
     </head>
 
     <body>
-    <h2>Register</h2>
-    <?php echo !$status ? "<p>Ce compte existe </p>" : '' ?>
     <form method="post" name="formRegister" action="index.php?action=register">
+        <div class="container">
+            <h2>Register</h2>
+            <?php echo !$status ? "<p>Un compte avec cette adresse email existe déja !</p>" : '' ?>
         <div class="form-group">
             <label for="inputEmail">Email address *</label>
             <input type="email" class="form-control" id="inputEmail" name="inputEmailAddress" aria-describedby="emailHelp" value="<?=!empty($_POST) ? $_POST['inputEmailAddress'] : ''?>" placeholder="firstname@domain.ch" required>
@@ -38,6 +39,7 @@ $title="DMS - Register";
             <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
     </body>
     </html>

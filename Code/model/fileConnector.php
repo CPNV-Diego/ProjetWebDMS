@@ -7,7 +7,7 @@ function registerUsers($data)
     $file_data = file_get_contents($filename);
     $users = json_decode($file_data, true);
 
-    if (existsNotInArray($data[0], $users)) {
+    if (emailNotExistInArray($data[0], $users)) {
 
         $users[] = array('email' => $data[0], 'password' => $data[1]);
         file_put_contents($filename, json_encode($users));
@@ -17,7 +17,27 @@ function registerUsers($data)
     }
 }
 
-function existsNotInArray($email, $users)
+function checkIfUserExist($data)
+{
+    $filename = 'data/register.json';
+
+    $file_data = file_get_contents($filename);
+    $users = json_decode($file_data, true);
+
+    if(!empty($users)) {
+        foreach ($users as $compare) {
+            if ($compare['email'] == $data[0] && $compare['password'] == $data[1]) {
+                return true;
+            }
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+
+function emailNotExistInArray($email, $users)
 {
     if(!empty($users)) {
         foreach ($users as $compare) {
