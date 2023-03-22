@@ -23,7 +23,15 @@ function lost(){
     require "view/lost.php";
 }
 
-function register()
-{
+function trolley(){
+    require "view/trolley.php";
+}
+
+function myAccount(){
+    require "view/myAccount.php";
+}
+
+function register(){
     require "view/register.php";
 }
+

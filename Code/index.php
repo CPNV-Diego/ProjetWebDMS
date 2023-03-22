@@ -26,6 +26,12 @@ if (isset($_GET['action'])) {
         case 'login' :
             login();
             break;
+        case 'trolley' :
+            trolley();
+            break;
+        case 'myAccount' :
+            myAccount();
+            break;
         default :
             lost();
     }

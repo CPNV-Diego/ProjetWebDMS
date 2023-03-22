@@ -63,8 +63,8 @@
                         <ul>
                             <li><a href="index.php?action=register">Register</a></li>
                             <li><a href="index.php?action=login">Login</a></li>
-                            <li><a href=""><img src="view/images/user-icon.png"></a></li>
-                            <li><a href="#"><img src="view/images/trolly-icon.png"></a></li>
+                            <li><a href="index.php?action=myAccount"><img src="view/images/user-icon.png"></a></li>
+                            <li><a href="index.php?action=trolley"><img src="view/images/trolly-icon.png"></a></li>
                             <li><a href="#"><img src="view/images/search-icon.png"></a></li>
                         </ul>
                     </div>
