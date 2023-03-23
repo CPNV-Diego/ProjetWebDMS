@@ -1,13 +1,16 @@
 <?php
 require "model/dataRegister.php";
 
-function home(){
+function home()
+{
     require "view/home.php";
 }
 function about(){
     require "view/about.php";
 }
 function product(){
+    require 'model/productConnector.php';
+    $products = getProducts();
     require "view/product.php";
 }
 function blog(){
@@ -34,4 +37,3 @@ function myAccount(){
 function register(){
     require "view/register.php";
 }
-
