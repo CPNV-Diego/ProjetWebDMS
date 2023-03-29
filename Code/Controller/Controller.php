@@ -3,14 +3,15 @@ require "model/dataRegister.php";
 
 function home()
 {
-    require "view/home.php";
+    require 'model/productConnector.php';
+    getProducts('home');
 }
 function about(){
     require "view/about.php";
 }
 function product(){
     require 'model/productConnector.php';
-    getProducts();
+    getProducts('product');
 }
 function blog(){
     require "view/blog.php";

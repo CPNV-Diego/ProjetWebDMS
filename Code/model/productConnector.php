@@ -1,7 +1,6 @@
 <?php
 
-function getProducts(){
-
+function getProducts($exit){
 
     $data = file_get_contents("data/products.json");
 
@@ -18,7 +17,15 @@ function getProducts(){
         $productBrand[$i] = $products[$i]->brand;
 
     }
-    require "view/product.php";
+    switch ($exit) {
+
+        case 'home' :
+            require "view/home.php";
+            break;
+        case 'product' :
+            require "view/product.php";
+            break;
+    }
 }
 ?>
 

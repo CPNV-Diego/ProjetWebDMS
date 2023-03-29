@@ -3,7 +3,7 @@
 <head>
     <!-- basic -->
     <meta charset="utf-8">
-    <title><?=$title;?></title>
+    <title><?= $title; ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- mobile metas -->
@@ -21,7 +21,7 @@
     <!-- Responsive-->
     <link rel="stylesheet" href="view/css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="view/images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="view/images/fevicon.png" type="image/gif"/>
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="view/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
@@ -29,7 +29,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <!-- owl stylesheets -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet"/>
 </head>
 <body>
 <!-- header section start -->
@@ -37,7 +37,8 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="logo" href="index.php?action=home"><img src="view/images/logo-dms.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -61,12 +62,19 @@
                 <form class="form-inline my-2 my-lg-0">
                     <div class="login_menu">
                         <ul>
-                            <li><a href="index.php?action=register">Register</a></li>
-                            <li><a href="index.php?action=login">Login</a></li>
-                            <li><a href="index.php?action=myAccount"><img src="view/images/user-icon.png"></a></li>
+                            <?php if (!isset($_SESSION['email']) || (!isset($_GET['action'])) || (($_GET['action']=="logout"))) : ?>
+                                <li><a href="index.php?action=register">Register</a></li>
+                                <li><a href="index.php?action=login">Login</a></li>
+                            <?php else : ?>
+                                <li><a href="index.php?action=myAccount"><img src="view/images/user-icon.png"></a></li>
+                            <?php endif; ?>
                             <li><a href="index.php?action=trolley"><img src="view/images/trolly-icon.png"></a></li>
                             <li><a href="#"><img src="view/images/search-icon.png"></a></li>
                         </ul>
+                        <?php if (isset($_SESSION['email'])) : ?>
+                            <h6>Vous êtes connecté : <?= $_SESSION['email']; ?></h6>
+                            <li><a href="index.php?action=logout">Logout</a></li>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>
@@ -75,58 +83,60 @@
 </div>
 <!-- header section end -->
 <!-- banner section start -->
-<?php if((@$_GET['action']=="home")||(!isset($_GET['action']))) :?>
-<div class="banner_section banner_bg">
-    <div class="container-fluid">
-        <div id="my_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="taital_main">
-                        <div class="taital_left">
-                            <h1 class="banner_taital">Deni Product For Skin</h1>
-                            <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
+<?php if(isset($_GET['action'])) :?>
+<?php if(($_GET['action']=="home")) :?>
+    <div class="banner_section banner_bg">
+        <div class="container-fluid">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="taital_main">
+                            <div class="taital_left">
+                                <h1 class="banner_taital">Deni Product For Skin</h1>
+                                <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
+                            </div>
+                            <div class="taital_right">
+                                <div class="product_img"><img src="view/images/product-img.png"></div>
+                            </div>
                         </div>
-                        <div class="taital_right">
-                            <div class="product_img"><img src="view/images/product-img.png"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="taital_main">
+                            <div class="taital_left">
+                                <h1 class="banner_taital">Deni Product For Skin</h1>
+                                <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
+                            </div>
+                            <div class="taital_right">
+                                <div class="product_img"><img src="view/images/product-img.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="taital_main">
+                            <div class="taital_left">
+                                <h1 class="banner_taital">Deni Product For Skin</h1>
+                                <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
+                            </div>
+                            <div class="taital_right">
+                                <div class="product_img"><img src="view/images/product-img.png"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="taital_main">
-                        <div class="taital_left">
-                            <h1 class="banner_taital">Deni Product For Skin</h1>
-                            <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
-                        </div>
-                        <div class="taital_right">
-                            <div class="product_img"><img src="view/images/product-img.png"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="taital_main">
-                        <div class="taital_left">
-                            <h1 class="banner_taital">Deni Product For Skin</h1>
-                            <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
-                        </div>
-                        <div class="taital_right">
-                            <div class="product_img"><img src="view/images/product-img.png"></div>
-                        </div>
-                    </div>
-                </div>
+                <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                    <i class='fa fa-arrow-up'></i>
+                </a>
+                <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                    <i class='fa fa-arrow-down'></i>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                <i class='fa fa-arrow-up'></i>
-            </a>
-            <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                <i class='fa fa-arrow-down'></i>
-            </a>
         </div>
     </div>
-</div>
-<!-- banner section end -->
+    <!-- banner section end -->
+    <?php endif; ?>
 <?php endif; ?>
 <div>
-    <?=$content; ?>
+    <?= $content; ?>
 </div>
 <!-- client section start -->
 <div class="client_section layout_padding banner_bg">
@@ -145,7 +155,11 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
                                 <div class="client_main">
                                     <div class="client_left">
                                         <div class="client_img"><img src="view/images/client-img.png"></div>
@@ -158,7 +172,11 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
                                 <div class="client_main">
                                     <div class="client_left">
                                         <div class="client_img"><img src="view/images/client-img.png"></div>
@@ -171,7 +189,11 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                                <p class="client_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laborisLorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
                                 <div class="client_main">
                                     <div class="client_left">
                                         <div class="client_img"><img src="view/images/client-img.png"></div>
@@ -206,7 +228,8 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="mail_box">
-                    <textarea class="enter_email_text" placeholder="Enter Your Email" rows="5" id="comment" name="Message"></textarea>
+                    <textarea class="enter_email_text" placeholder="Enter Your Email" rows="5" id="comment"
+                              name="Message"></textarea>
                     <div class="subscribe_bt_1"><a href="#">Subscribe</a></div>
                 </div>
             </div>
@@ -226,19 +249,23 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <h3 class="company_text">Product</h3>
-                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
+                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                        volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="company_text">Shop</h3>
-                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
+                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                        volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="company_text">Company</h3>
-                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
+                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                        volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h3 class="company_text">MY ACCOUNT</h3>
-                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
+                    <p class="dolor_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                        volutpat mattis eros.Lorem ipsum dolor sit amet, </p>
                 </div>
             </div>
         </div>
@@ -248,7 +275,8 @@
 <!-- copyright section start -->
 <div class="copyright_section">
     <div class="container">
-        <p class="copyright_text">© 2020 All Rights Reserved.<a href="https://htmsrcl.design"> Free html Templates</a></p>
+        <p class="copyright_text">© 2020 All Rights Reserved.<a href="https://htmsrcl.design"> Free html Templates</a>
+        </p>
     </div>
 </div>
 <!-- copyright section end  -->
@@ -265,19 +293,19 @@
 <script src="view/js/owl.carousel.js"></script>
 <!-- owl carousel -->
 <script>
-$('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:30,
-        nav:true,
-        responsive:{
-    0:{
-        items:1
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-        items:3
+            600: {
+                items: 3
             },
-            1000:{
-        items:4
+            1000: {
+                items: 4
             }
         }
     })

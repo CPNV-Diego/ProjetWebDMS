@@ -26,6 +26,9 @@ if (isset($_GET['action'])) {
         case 'login' :
             login();
             break;
+        case 'logout' :
+            logout();
+            break;
         case 'trolley' :
             trolley();
             break;

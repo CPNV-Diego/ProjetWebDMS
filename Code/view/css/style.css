@@ -263,14 +263,10 @@ button {
     padding-left: 15px;
 }
 
-.login_menu li a {
-    color: #ffffff;
-}
 
 .login_menu li a:hover {
     color: #f74c67;
 }
-
 
 /* header section end */
 
