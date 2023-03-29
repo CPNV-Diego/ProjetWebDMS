@@ -6,8 +6,10 @@ function getProducts(){
     $data = file_get_contents("data/products.json");
 
     $products = json_decode($data);
+    $countProduct = count($products);
+    for ($i = 0; $i < $countProduct; $i++) {
 
-    for ($i = 0; $i < count($products); $i++) {
+        $productImage[$i] = $products[$i]->image;
 
         $productName[$i] = $products[$i]->name;
 

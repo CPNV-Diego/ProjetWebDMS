@@ -598,6 +598,12 @@ button {
     display: none;
 }
 
+.imageProduit {
+    width: 20%;
+    max-width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 /* product section end */
 
@@ -1061,6 +1067,7 @@ textarea#comment::placeholder {
 .padding_top0{
     padding-top: 0px;
 }
+
 
 
 /* copyright section end */

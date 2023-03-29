@@ -10,8 +10,7 @@ function about(){
 }
 function product(){
     require 'model/productConnector.php';
-    $products = getProducts();
-    require "view/product.php";
+    getProducts();
 }
 function blog(){
     require "view/blog.php";
@@ -21,6 +20,9 @@ function contact(){
 }
 function login(){
     require "view/login.php";
+    $email = $_POST['inputEmailAddress'];
+    $pwd = $_POST['inputPassword'];
+    extractRegister($email,$pwd);
 }
 function lost(){
     require "view/lost.php";

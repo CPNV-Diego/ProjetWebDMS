@@ -16,26 +16,24 @@ $title = "DMS - Product";
             <div class="row">
                 <div class="col-md-12">
 
-                    <h1 class="product_taital">Recommended</h1>
-                    <p class="product_text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim</p>
+                    <h1 class="product_taital">Nos produits</h1>
+                    <p class="product_text"></p>
                 </div>
             </div>
-            <?php for ($i = 0;
-            $i < count($products);
-            $i++) { ?>
-
+            <?php
+            for ($i = 0;$i < $countProduct;$i++) { ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="item">
-                        <div class="image_main"><img src="view/images/img-2.png" alt="image"/></div>
+                        <div class="imageProduit"><img src="<?= $productImage[$i]?> " />
                         <h6 class="price_text"><?= $productPrice[$i] ?> <br><span style="color: #f75261;"><?= $productName[$i] ?><br><?= $productBrand[$i] ?></span>
                         </h6>
+                        </div>
                     </div>
                 </div>
             </div>
+            <?php } ?>
         </div>
-        <?php } ?>
     </div>
 <?php
 $content = ob_get_clean();

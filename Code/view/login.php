@@ -8,7 +8,7 @@
 $status = true;
 if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {
-    $status = controlLogin($_POST);
+    $status = IsLoginCorrect($_POST);
     $_POST = [];
 }
 // tampon de flux stocké en mémoire
