@@ -23,7 +23,11 @@ $title="DMS - Register";
         <title>FormulaireInscription</title>
         <link rel="stylesheet" href="view/css/bootstrap.css">
     </head>
-
+    <?php if (isset($error)):?>
+        <?php if ($error == "registration not possible") :?>
+            <h5><span style="color:red">les deux mots de passe doivent être identiques</span></h5>
+        <?php endif ?>
+    <?php endif ?>
     <body>
     <form method="post" name="formRegister" action="index.php?action=register">
         <div class="container">
@@ -38,6 +42,10 @@ $title="DMS - Register";
             <label for="inputPassword">Password *</label>
             <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
         </div>
+            <div class="form-group">
+                <label for="inputPasswordCheck">Password *</label>
+                <input type="password" class="form-control" id="inputPasswordCheck" name="inputPasswordCheck" placeholder="Confirm Password" required>
+            </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>

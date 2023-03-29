@@ -26,17 +26,6 @@ function saveRegister($data)
 }
 
 
-function controlLogin($data)
-{
-
-    $email = $data['inputEmailAddress'];
-    $pwd = $data['inputPassword'];
-    $userToLogin = extractRegister($email, $pwd);//crée tableau simple (non associatif)
-    return checkIfUserExist($userToLogin);
-
-}
-
-
 function IsLoginCorrect($post)
 {
     $Accounts = json_decode(file_get_contents("data/register.json"), true);;
@@ -78,4 +67,11 @@ function extractRegister($email, $pwd)
 
     }
     return false;
+}
+
+function logout(): void
+{
+    $_SESSION = array();
+    session_destroy();
+    require "view/home.php";
 }
