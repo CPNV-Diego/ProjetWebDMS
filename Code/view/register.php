@@ -1,10 +1,10 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
- * Time: 09:16
+ * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
+ * File : register.php
  */
+
 $status = true;
 if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {
@@ -41,11 +41,6 @@ $title="DMS - Register";
         <div class="form-group">
             <label for="inputPassword">Password *</label>
             <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
-        </div>
-            <div class="form-group">
-                <label for="inputPasswordCheck">Password *</label>
-                <input type="password" class="form-control" id="inputPasswordCheck" name="inputPasswordCheck" placeholder="Confirm Password" required>
-            </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>

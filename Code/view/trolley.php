@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
+ * File : trolley.php
+ */
+
 ob_start();
 ?>
     <div id="cart"><h2>Votre panier</h2>

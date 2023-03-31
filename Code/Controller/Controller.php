@@ -1,4 +1,9 @@
 <?php
+/**
+ * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
+ * File : Controller.php
+ */
+
 require "model/dataRegister.php";
 
 function home()

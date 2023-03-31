@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
- * Time: 09:16
+ * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
+ * File : home.php
  */
 
 // tampon de flux stocké en mémoire

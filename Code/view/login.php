@@ -1,10 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
- * Time: 09:16
+ * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
+ * File : login.php
  */
+
 $status = true;
 if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {

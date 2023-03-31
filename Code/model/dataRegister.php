@@ -13,14 +13,16 @@ function extractUser($data)
 {
     $emailAddress = $data['inputEmailAddress'];
     $password = $data['inputPassword'];
+
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     return array($emailAddress, $passwordHash);
+
 }
 
 function saveRegister($data)
 {
-    //Cette fonction crée un tableau et l'écrit dans le json comme une ligne
 
+    //Cette fonction crée un tableau et l'écrit dans le json comme une ligne
     $newRegisterToWrite = extractUser($data);//crée tableau simple (non associatif)
     return registerUsers($newRegisterToWrite);
 }
@@ -69,9 +71,11 @@ function extractRegister($email, $pwd)
     return false;
 }
 
+
 function logout(): void
 {
     $_SESSION = array();
     session_destroy();
-    require "view/home.php";
+    require "view/login.php";
+
 }
