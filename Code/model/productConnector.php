@@ -5,7 +5,13 @@
  */
 
 function getProducts($exit){
-
+/*
+ * Cette fonction prend un paramètre $exit.
+ * Elle lit le contenu du fichier JSON data/products.json,
+ * le convertit en un objet PHP,
+ * puis stocke les données de chaque produit dans des tableaux PHP.
+ * Enfin, elle utilise une instruction switch pour déterminer quelle vue doit être chargée en fonction de la valeur de $exit.
+ */
     $data = file_get_contents("data/products.json");
 
     $products = json_decode($data);

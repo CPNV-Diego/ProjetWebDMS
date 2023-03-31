@@ -39,5 +39,7 @@ $title="DMS - Blog";
 </div>
 <!-- Blog section end -->
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";

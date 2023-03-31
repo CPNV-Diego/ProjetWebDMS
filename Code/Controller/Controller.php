@@ -9,6 +9,8 @@ require "model/dataRegister.php";
 function home()
 {
     require 'model/productConnector.php';
+    //Appele la fonction getProducts dans le productConnector.php avec la case 'home'
+
     getProducts('home');
 }
 function about(){
@@ -16,6 +18,7 @@ function about(){
 }
 function product(){
     require 'model/productConnector.php';
+    //Appele la fonction getProducts dans le productConnector.php avec la case 'product'
     getProducts('product');
 }
 function blog(){
@@ -26,6 +29,7 @@ function contact(){
 }
 function login(){
     require "view/login.php";
+    //Récupèration de l'email et le mot de passe via le formulaire et appelle la fonction extractRegister en passant les données comme paramètres.
     $email = $_POST['inputEmailAddress'];
     $pwd = $_POST['inputPassword'];
     extractRegister($email,$pwd);

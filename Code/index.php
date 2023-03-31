@@ -5,9 +5,12 @@
  * File : index.php
  */
 
+//Ouverture de la session
 session_start();
 require "Controller/Controller.php";
 
+// Vérification si la variable 'action' a été passée via la méthode GET dans l'URL.
+// Si c'est le cas, le code stocke la valeur de cette variable dans une variable appelée $action.
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {

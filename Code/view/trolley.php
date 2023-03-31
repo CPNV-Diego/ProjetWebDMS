@@ -5,6 +5,7 @@
  * File : trolley.php
  */
 
+// tampon de flux stocké en mémoire
 ob_start();
 ?>
     <div id="cart"><h2>Votre panier</h2>
@@ -21,5 +22,7 @@ ob_start();
         </table>
         <p id="total">Total: 0 €</p></div>
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";
