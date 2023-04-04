@@ -24,7 +24,7 @@ $title = "DMS - Accueil";
                         for ($i = 0; $i < $countProduct; $i++) { ?>
                             <div class="item">
                                 <div class="image_main"><img src="<?= $productImage[$i]?>" alt="image"/></div>
-                                <h6 class="price_text"><?= $productPrice[$i] ?> <br><span style="color: #f75261;"><?= $productName[$i] ?><br><?= $productBrand[$i] ?></span>
+                                <h6 class="price_text"><?= $productPrice[$i] ?> CHF <br><span style="color: #f75261;"><?= $productName[$i] ?><br><?= $productBrand[$i] ?></span>
                                 </h6>
                             </div>
                         <?php } ?>

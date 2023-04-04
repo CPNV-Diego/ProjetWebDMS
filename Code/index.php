@@ -23,9 +23,6 @@ if (isset($_GET['action'])) {
         case 'product' :
             product();
             break;
-        case 'blog'  :
-            blog();
-            break;
         case 'contact' :
             contact();
             break;
@@ -38,11 +35,17 @@ if (isset($_GET['action'])) {
         case 'logout' :
             logout();
             break;
-        case 'trolley' :
-            trolley();
+        case 'cart' :
+            cart();
+            break;
+        case 'reset_cart' :
+            reset_cart();
             break;
         case 'myAccount' :
             myAccount();
+            break;
+        case 'add_to_cart' :
+            add_to_cart($_GET['product_id']);
             break;
         default :
             lost();

@@ -334,6 +334,20 @@ button {
     background-color: #ffffff;
 }
 
+.cart {
+    width: 20%;
+    max-width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cart_btn{
+    text-decoration: none;
+    color: white;
+    background-color: #363636;
+    padding: 10px 20px;
+}
+
 .product_img {
     width: 100%;
     float: left;
