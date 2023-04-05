@@ -6,6 +6,12 @@
 
 function registerUsers($data)
 {
+    /*
+     * Cette fonction prend un tableau $data contenant l'adresse e-mail et le mot de passe d'un nouvel utilisateur.
+     * Elle vérifie si l'adresse e-mail n'existe pas déjà dans le fichier register.json,
+     * ajoute l'utilisateur au tableau et enregistre dans le fichier JSON.
+     * La fonction renvoie true si l'enregistrement s'est bien déroulé, sinon false.
+     */
     $filename = 'data/register.json';
 
     $file_data = file_get_contents($filename);
@@ -20,7 +26,7 @@ function registerUsers($data)
         return false;
     }
 }
-
+/*
 function checkIfUserExist($data)
 {
     $filename = 'data/register.json';
@@ -39,9 +45,13 @@ function checkIfUserExist($data)
         return false;
     }
 }
-
+*/
 
 function emailNotExistInArray($email, $users)
+    /*
+     * Cette fonction vérifie si l'email n'existe pas déjà dans un tableau "$users".
+     * Elle retourne true si l'email n'existe pas dans le tableau "$users", et false s'il existe déjà.
+     */
 {
     if(!empty($users)) {
         foreach ($users as $compare) {
@@ -54,6 +64,7 @@ function emailNotExistInArray($email, $users)
         return true;
     }
 }
+/*
 //<editor-fold desc="function">
 /**
  * This function is designed to append a path with the fileName received as parameter
@@ -62,17 +73,20 @@ function emailNotExistInArray($email, $users)
  * @return [String] full path to the log file expressed as a string
  * @example File Name : testFile.log / after function : [pathToFile]\testFile.log
  */
+/*
 function setFullPath($fName)
 {
     /* Help
         get current directory -> http://php.net/manual/en/function.getcwd.php
     */
+/*
 
     $currentPath = getcwd();
     $fullPathToFile = $currentPath . "\\" . $fName;
     return $fullPathToFile;
 }
 
+/*
 /**
  * This function is designed to write a string message in a file.
  * -The opening and closing action is managed by the fuction
@@ -80,7 +94,8 @@ function setFullPath($fName)
  * @param $lineToWrite : Is the content to write in the file.
  * @param $erase : Is an option allowing to erase the file before writing or happening the $lineToWrite a the end of the file
  */
-/*function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
+/*
+function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
 {
     Help
     //http://php.net/manual/en/function.fopen.php

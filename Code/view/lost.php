@@ -3,6 +3,7 @@
  * Users: Simão Henriques da Silva / Diego Pinto Tomaz / Marcos Valente da Silva
  * File : lost.php
  */
+
 // tampon de flux stocké en mémoire
 ob_start();
 $title="DMS - Perdu";
@@ -15,5 +16,7 @@ $title="DMS - Perdu";
     </div>
 
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";

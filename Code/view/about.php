@@ -13,12 +13,11 @@ $title="DMS - About";
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div><img src="view/images/about-img.png" class="about_img"></div>
             </div>
             <div class="col-md-6">
                 <h1 class="about_taital">About company</h1>
                 <div class="border"></div>
-                <p class="about_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationconsectetur adipiscing </p>
+                <p class="about_text">Small company selling shoes</p>
                 <div class="read_bt_1"><a href="#">Read More</a></div>
                 <div class="image_1"><img src="view/images/img-1.png"></div>
             </div>
@@ -27,5 +26,7 @@ $title="DMS - About";
 </div>
 <!-- about section end -->
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";

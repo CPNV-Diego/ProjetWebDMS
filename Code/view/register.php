@@ -5,6 +5,8 @@
  * File : register.php
  */
 
+// Ca permet de sauvegarder les données d'un formulaire de registre dans un fichier,
+// et stocke le résultat de cette opération dans la variable $status.
 $status = true;
 if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {
@@ -49,5 +51,7 @@ $title="DMS - Register";
 
 
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";

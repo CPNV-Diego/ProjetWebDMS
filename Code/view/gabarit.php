@@ -60,9 +60,6 @@
                         <a class="nav-link" href="index.php?action=product">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="index.php?action=contact">Contact</a>
                     </li>
                 </ul>
@@ -74,14 +71,10 @@
                                 <li><a href="index.php?action=login">Login</a></li>
                             <?php else : ?>
                                 <li><a href="index.php?action=myAccount"><img src="view/images/user-icon.png"></a></li>
+                                <li><a href="index.php?action=logout">Logout</a></li>
+                                <li><a href="index.php?action=cart"><img src="view/images/trolly-icon.png"></a></li>
                             <?php endif; ?>
-                            <li><a href="index.php?action=trolley"><img src="view/images/trolly-icon.png"></a></li>
-                            <li><a href="#"><img src="view/images/search-icon.png"></a></li>
                         </ul>
-                        <?php if (isset($_SESSION['email'])) : ?>
-                            <h6>Vous êtes connecté : <?= $_SESSION['email']; ?></h6>
-                            <li><a href="index.php?action=logout">Logout</a></li>
-                        <?php endif; ?>
                     </div>
                 </form>
             </div>
@@ -92,21 +85,6 @@
 <!-- banner section start -->
 <?php if(isset($_GET['action'])) :?>
 <?php if(($_GET['action']=="home")) :?>
-    <div class="banner_section banner_bg">
-        <div class="container-fluid">
-            <div id="my_slider" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="taital_main">
-                            <div class="taital_left">
-                                <h1 class="banner_taital">Deni Product For Skin</h1>
-                                <div class="read_bt"><a href="index.php?action=product">Read More</a></div>
-                            </div>
-                            <div class="taital_right">
-                                <div class="product_img"><img src="view/images/product-img.png"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="carousel-item">
                         <div class="taital_main">
                             <div class="taital_left">
@@ -130,12 +108,6 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                    <i class='fa fa-arrow-up'></i>
-                </a>
-                <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                    <i class='fa fa-arrow-down'></i>
-                </a>
             </div>
         </div>
     </div>

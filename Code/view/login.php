@@ -4,29 +4,16 @@
  * File : login.php
  */
 
+//Cela permet de vérifier si des données ont été dans un formulaire en méthode POST
+// et vérifie si les données sont correctes en appelant la fonction IsLoginCorrect.
 $status = true;
 if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST))
 {
     $status = IsLoginCorrect($_POST);
     $_POST = [];
 }
+
 // tampon de flux stocké en mémoire
-/*$msg = '';
-
-if (isset($_POST['login']) && !empty($_POST['username'])
-    && !empty($_POST['password'])) {
-
-    if ($_POST['username'] == 'InputEmailAdresse' &&
-        $_POST['password'] == '1234') {
-        $_SESSION['valid'] = true;
-        $_SESSION['timeout'] = time();
-        $_SESSION['username'] = 'tutorialspoint';
-
-        echo 'You have entered valid use name and password';
-    }else {
-        $msg = 'Wrong username or password';
-    }
-}*/
 ob_start();
 $title="DMS - Login";
 ?>
@@ -64,5 +51,7 @@ $title="DMS - Login";
     </html>
 
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";

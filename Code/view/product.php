@@ -25,7 +25,7 @@ $title = "DMS - Product";
                 <div class="col-md-12">
                     <div class="item">
                         <div class="imageProduit"><img src="<?= $productImage[$i]?> " />
-                        <h6 class="price_text"><?= $productPrice[$i] ?> <br><span style="color: #f75261;"><?= $productName[$i] ?><br><?= $productBrand[$i] ?></span>
+                        <h6 class="price_text"><?= $productPrice[$i] ?> CHF <br><span style="color: #f75261;"><a href=<?="?action=add_to_cart&product_id=".$i?>><?=$productName[$i]?></a><br><?= $productBrand[$i] ?></span>
                         </h6>
                         </div>
                     </div>
@@ -35,5 +35,7 @@ $title = "DMS - Product";
         </div>
     </div>
 <?php
+//tampon de flux vidé de la mémoire
 $content = ob_get_clean();
+//appelle le fichier gabarit.php
 require "gabarit.php";
