@@ -4,6 +4,15 @@
  * File : cartConnector.php
  */
 
+/*
+ * Cette fonction ajoute un produit au panier d'achat.
+ * Elle vérifie si la variable de la session "cart" existe, sinon elle crée un tableau vide,
+ * Après, elle parcourt le panier pour voir si le produit qui vous voulez ajouter y est déjà présent.
+ * Si oui, elle ajoute simplement 1 à la quantité du produit existant.
+ * Sinon, ça crée un ajoute un nouveau produit dans le panier,
+ * Par la suite çA l'ajoute au tableau de panier.
+ * A la fin la fonction renvoie 1 pour indiquer que l'ajout s'est bien déroulé.
+ */
 function add_product_to_cart($product){
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = array();
 

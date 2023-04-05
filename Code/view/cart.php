@@ -5,6 +5,9 @@
  * File : cart.php
  */
 
+// Cela vérifie la variable de session "cart".
+// Si elle n'est pas vide ça calcule le prix total des produits dans le panier en multipliant la quantité de chaque produit par son prix
+// et cela ajoute les résultats dans la variable "total_price".
 if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     $total_price = 0;
     foreach ($_SESSION['cart'] as $product) {

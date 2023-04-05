@@ -72,9 +72,8 @@
                             <?php else : ?>
                                 <li><a href="index.php?action=myAccount"><img src="view/images/user-icon.png"></a></li>
                                 <li><a href="index.php?action=logout">Logout</a></li>
+                                <li><a href="index.php?action=cart"><img src="view/images/trolly-icon.png"></a></li>
                             <?php endif; ?>
-                            <li><a href="index.php?action=cart"><img src="view/images/trolly-icon.png"></a></li>
-                            <li><a href="#"><img src="view/images/search-icon.png"></a></li>
                         </ul>
                     </div>
                 </form>
@@ -109,12 +108,6 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                    <i class='fa fa-arrow-up'></i>
-                </a>
-                <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                    <i class='fa fa-arrow-down'></i>
-                </a>
             </div>
         </div>
     </div>
